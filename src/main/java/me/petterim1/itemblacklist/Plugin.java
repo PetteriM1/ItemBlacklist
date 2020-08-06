@@ -16,14 +16,12 @@ public class Plugin extends PluginBase implements Listener {
     static List<String> blacklist;
     static String blacklistedMessage;
     static boolean message;
-    static boolean allowForOP;
     private Config data;
 
     public void onEnable() {
         saveDefaultConfig();
         saveResource("data.yml");
         blacklistedMessage = getConfig().getString("blacklistedMessage");
-        allowForOP = getConfig().getBoolean("allowForOP");
         message = !TextFormat.clean(blacklistedMessage).isEmpty();
         data = new Config(getDataFolder() + "/data.yml", Config.YAML);
         blacklist = data.getStringList("blacklist");
@@ -39,7 +37,7 @@ public class Plugin extends PluginBase implements Listener {
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
         if (e.getItem() != null && blacklist.contains(e.getItem().getId() + ":" + e.getItem().getDamage())) {
-            if (allowForOP && e.getPlayer().isOp()) return;
+            if (e.getPlayer().hasPermission("itemblacklist.ignore")) return;
             e.setCancelled(true);
             if (message) {
                 e.getPlayer().sendMessage(blacklistedMessage);

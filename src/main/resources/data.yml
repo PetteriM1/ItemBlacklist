@@ -1,0 +1,4 @@
+# stop the server before editing this or use 'blacklist <add|remove|list> <id:meta>' to edit blacklisted items
+blacklist:
+ - "666:0"
+ - "999:0"

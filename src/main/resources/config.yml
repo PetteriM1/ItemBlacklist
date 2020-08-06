@@ -1,0 +1,8 @@
+# remove blacklisted items when player holds them in hand
+removeBlacklistedItems: false
+# disable moving blacklisted items
+blockInventoryTransactions: false
+# message that shows when player try to use blacklisted item (empty = no message)
+blacklistedMessage: "§c[ItemBlacklist] This item is blacklisted!"
+# allow players with OP to ignore the blacklist
+allowForOP: true

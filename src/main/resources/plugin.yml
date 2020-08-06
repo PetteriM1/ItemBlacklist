@@ -1,0 +1,16 @@
+name: ItemBlacklist
+main: me.petterim1.itemblacklist.Plugin
+version: "${pom.version}"
+api: ["1.0.0"]
+author: PetteriM1
+description: "Advanced item blacklist plugin for Nukkit"
+
+commands:
+  blacklist:
+    permission: "itemblacklist.admin"
+    usage: "/blacklist <add|remove|list> <id:meta>"
+    description: "Manage blacklisted items"
+
+permissions:
+  itemblacklist.admin:
+    default: op

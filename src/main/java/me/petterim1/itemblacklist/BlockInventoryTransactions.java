@@ -13,9 +13,11 @@ public class BlockInventoryTransactions implements Listener {
         for (InventoryAction action : e.getTransaction().getActionList()) {
             Item source = action.getSourceItem();
             String s = source != null ? (source.getId() + ":" + source.getDamage()) : "";
+            String s_ = source != null ? (source.getId() + ":*") : "";
             Item target = action.getTargetItem();
             String t = target != null ? (target.getId() + ":" + target.getDamage()) : "";
-            if (Plugin.blacklist.contains(s) || Plugin.blacklist.contains(t)) {
+            String t_ = target != null ? (target.getId() + ":*") : "";
+            if (Plugin.blacklist.contains(s) || Plugin.blacklist.contains(s_) || Plugin.blacklist.contains(t) || Plugin.blacklist.contains(t_)) {
                 e.setCancelled(true);
             }
         }

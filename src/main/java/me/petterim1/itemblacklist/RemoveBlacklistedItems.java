@@ -8,7 +8,7 @@ public class RemoveBlacklistedItems implements Listener {
 
     @EventHandler
     public void onHeld(PlayerItemHeldEvent e) {
-        if (e.getItem() != null && Plugin.blacklist.contains(e.getItem().getId() + ":" + e.getItem().getDamage())) {
+        if (e.getItem() != null && (Plugin.blacklist.contains(e.getItem().getId() + ":" + e.getItem().getDamage()) || Plugin.blacklist.contains(e.getItem().getId() + ":*"))) {
             if (e.getPlayer().hasPermission("itemblacklist.ignore")) return;
             e.getPlayer().getInventory().clear(e.getSlot(), true);
             if (Plugin.message) {

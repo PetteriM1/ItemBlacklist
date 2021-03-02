@@ -36,7 +36,7 @@ public class Plugin extends PluginBase implements Listener {
 
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
-        if (e.getItem() != null && blacklist.contains(e.getItem().getId() + ":" + e.getItem().getDamage())) {
+        if (e.getItem() != null && (blacklist.contains(e.getItem().getId() + ":" + e.getItem().getDamage()) || blacklist.contains(e.getItem().getId() + ":*"))) {
             if (e.getPlayer().hasPermission("itemblacklist.ignore")) return;
             e.setCancelled(true);
             if (message) {

@@ -1,4 +1,6 @@
 # stop the server before editing this or use 'blacklist <add|remove|list> <id:meta>' to edit blacklisted items
+# - "id:meta" (use '*' for all meta values)
 blacklist:
  - "666:0"
  - "999:0"
+ - "888:*"

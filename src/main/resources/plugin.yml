@@ -4,6 +4,7 @@ version: "${pom.version}"
 api: ["1.0.0"]
 author: PetteriM1
 description: "Advanced item blacklist plugin for Nukkit"
+website: https://cloudburstmc.org/resources/itemblacklist.533/
 
 commands:
   blacklist:

@@ -6,7 +6,7 @@
 
     <groupId>me.petterim1.itemblacklist</groupId>
     <artifactId>ItemBlacklist</artifactId>
-    <version>1.1.0</version>
+    <version>1.2.0</version>
     <build>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
         <plugins>
